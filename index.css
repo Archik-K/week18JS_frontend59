@@ -1,0 +1,132 @@
+.shared_container {
+	display: flex;
+	margin: auto;
+	width: 660px;
+	height: 900px;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgba(236, 255, 215, 0.6901960784);
+	border: dashed rgb(106, 162, 45);
+}
+
+.photo_of_the_app_header {
+	background: url("/assets/1612233750_37-p-fioletovii-klipart-na-prozrachnom-fone-56.png");
+	width: 578px;
+	height: 300px;
+	background-position: center;
+	background-size: cover;
+}
+
+.title_for_adding_a_task {
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	font-size: 27px;
+	letter-spacing: 2px;
+	position: relative;
+	bottom: -13px;
+	right: 177px;
+	line-height: 70px;
+}
+
+.title_for_the_task_list {
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	font-size: 27px;
+	letter-spacing: 2px;
+	position: relative;
+	bottom: -13px;
+	right: 203px;
+	line-height: 70px;
+}
+
+.task_addition_block {
+	width: 600px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.task_list_block {
+	width: 600px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+.task_input_field {
+	width: 313px;
+	height: 18px;
+	border: none;
+	background: transparent;
+	outline: none;
+	padding: 10px;
+	border-radius: 0;
+	border-bottom: 2px solid #a5cb7d;
+}
+
+.task_input_field:focus {
+	border-bottom: 2px solid rgb(100, 154, 43);
+}
+
+.button_to_add_a_task,
+.button_to_clear_the_task_list {
+	margin: 0 0 0 100px;
+	width: 165px;
+	height: 35px;
+	background-color: #bbff6d;
+	border: none;
+	color: #333;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.362);
+	cursor: pointer;
+}
+
+.button_to_add_a_task:active,
+.button_to_clear_the_task_list:active {
+	transform: translateY(1px);
+	background-color: #80ff00;
+}
+
+.list_of_tasks {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.list_of_tasks li {
+	display: flex;
+	margin: 10px 0 0 0;
+	width: 313px;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px dashed rgb(106, 162, 45);
+	padding: 7px;
+	flex-direction: row-reverse;
+}
+
+.list_of_tasks li label {
+	margin: 0 0 0 0;
+}
+
+.list_of_tasks li button {
+	margin-left: auto;
+}
+
+.no-tasks {
+	text-align: center;
+	color: #bbb;
+} /*# sourceMappingURL=app.css.map */
+input.error,
+select.error {
+	border: 2px solid red;
+}
+
+.error-message {
+	display: flex;
+	padding: 2px;
+	color: red;
+	font-size: 12px;
+}

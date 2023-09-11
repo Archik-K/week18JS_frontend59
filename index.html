@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./index.css" />
+		<link rel="stylesheet" href="./normalize.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="shared_container">
+			<div class="photo_of_the_app_header"></div>
+			<h1 class="title_for_adding_a_task">Добавить задачу</h1>
+			<div class="task_addition_block">
+				<input
+					type="text"
+					required
+					pattern="[A-Za-zА-Яа-я\s]+"
+					class="task_input_field"
+					placeholder="Введите задачу"
+				/>
+				<span class="error-message"></span>
+				<button class="button_to_add_a_task">Добавить</button>
+			</div>
+			<h1 class="title_for_the_task_list">Список задач</h1>
+			<div class="task_list_block">
+				<ul class="list_of_tasks"></ul>
+				<button class="button_to_clear_the_task_list">Очистить список</button>
+			</div>
+		</div>
+		<script src="./index.js"></script>
+	</body>
+</html>
