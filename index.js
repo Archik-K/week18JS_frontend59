@@ -10,29 +10,25 @@ if (localStorage.getItem("tasks")) {
 	tasks = JSON.parse(localStorage.getItem("tasks"));
 }
 
-// Функция для сохранения задач в Local Storage
-function saveTasksToLocalStorage() {
-	localStorage.setItem("tasks", JSON.stringify(tasks));
-}
-
 // функция для добавления задачи в список
 function addTask() {
-	const task = input.value; // Получаем значение из поля ввода задачи и сохраняем его в переменной "task"
+	const task = input.value.trim(); // Получаем значение из поля ввода задачи и сохраняем его в переменной "task", добавляем метод trim() на значение поля ввода задачи для удаления пробелов
 	let isValid = true; // Переменная, которая будет хранить информацию о том, валидна ли поле ввода
-	if (!input.checkValidity()) {
+	if (!input.checkValidity() || task === "") {
 		// Если текущий элемент ввода не проходит валидацию
 		input.classList.add("error"); // Добавляем класс ошибки для этого элемента
-		input.nextElementSibling.textContent = input.validationMessage; // Отображаем сообщение об ошибке
+		input.nextElementSibling.textContent =
+			input.validationMessage || "Пожалуйста, введите задачу."; // Отображаем сообщение об ошибке или об ошибке пустой задачи
 		isValid = false; // Устанавливаем флаг валидации в false
 	}
 	if (isValid) {
 		// Если поле валидно
 		input.classList.remove("error"); // Удаляем класс ошибки (если он был)
+		localStorage.setItem("tasks", JSON.stringify(tasks)); //Сохраняем задачу в Local Storage
 		input.nextElementSibling.textContent = ""; // Очищаем сообщение об ошибке (если оно было)
 		tasks.push(task); // добавляем задачу в массив
 		input.value = ""; // Очищаем поле ввода задачи
 		updateTaskList(); // обновляем список задач
-		saveTasksToLocalStorage();
 	}
 }
 
@@ -72,8 +68,6 @@ button.addEventListener("click", addTask);
 
 // обработчик клика на кнопку очистки списка задач
 clearButton.addEventListener("click", () => {
-	// Функция для очистки списка задач
-	updateTaskList();
 	localStorage.clear(); // Сохраняем задачи в Local Storage
 	tasks = []; // Очищаем массив задач
 	updateTaskList(); // Обновляем список задач
